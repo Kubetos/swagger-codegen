@@ -14,5 +14,6 @@ docker run --rm -it \
         -u "$(id -u):$(id -g)" \
         -v "${PWD}:/gen" \
         -v "${maven_cache_repo}:/var/maven/.m2/repository" \
+        -v "${PWD}/../transaction_api:/transaction_api" \
         --entrypoint /gen/docker-entrypoint.sh \
         maven:3-jdk-8 "$@"
